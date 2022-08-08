@@ -54,7 +54,7 @@ router.get("/", auth.optional, function (req, res, next) {
   }
 
   if (req.query.title) {
-    query.itemList = { $in: [req.query.title] };
+    query.title = title;
   }
 
   Promise.all([
