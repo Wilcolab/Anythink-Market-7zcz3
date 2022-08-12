@@ -30,7 +30,7 @@ const GlobalFeedTab = (props) => {
   const clickHandler = (ev) => {
     ev.preventDefault();
     props.onTabClick("all", agent.Items.all, agent.Items.all());
-  };
+  }; 
   return (
     <li className="nav-item">
       <button
