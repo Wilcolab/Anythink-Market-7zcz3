@@ -11,6 +11,14 @@ const ItemList = (props) => {
     return <div className="py-4 no-items">No items are here... yet.</div>;
   }
 
+  if (props.noResults) {
+    return (
+      <div className="py-4 no-items" id="empty">
+        {"No items were found for your search :("}
+      </div>
+    )
+  }
+
   return (
     <div className="container py-2">
       <div className="row">
