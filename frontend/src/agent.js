@@ -50,6 +50,7 @@ const Tags = {
 
 const limit = (count, p) => `limit=${count}&offset=${p ? p * count : 0}`;
 const omitSlug = (item) => Object.assign({}, item, { slug: undefined });
+const withTitle = (title) => title && `?title=${title}`
 const Items = {
   all: (page) => requests.get(`/items?${limit(1000, page)}`),
   bySeller: (seller, page) =>
@@ -68,6 +69,7 @@ const Items = {
   update: (item) =>
     requests.put(`/items/${item.slug}`, { item: omitSlug(item) }),
   create: (item) => requests.post("/items", { item }),
+  title: (title) => requests.get(`items/${withTitle(title)}`)
 };
 
 const Comments = {
