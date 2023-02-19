@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../imgs/logo.png";
 
 import agent from "../../agent";
 
 const Banner = (props) => {
-  const [search, setSearch] = useState("");
-
-  return (
+   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
@@ -26,7 +24,6 @@ const Banner = (props) => {
                 id="search-box"
                 placeholder="What is it that you truly desire?"
                 name="term"
-                value={search}
                 style={
                   {
                     width: "100%",
@@ -37,7 +34,6 @@ const Banner = (props) => {
                   }
                 }
                 onChange={(e) => {
-                  setSearch(e.target.value);
                   props.onSearchFilter(
                     e.target.value, (page) => {
                       agent.Items.byTitle(e.target.value)
