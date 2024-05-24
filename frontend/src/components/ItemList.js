@@ -1,15 +1,17 @@
 import ItemPreview from "./ItemPreview";
 import ListPagination from "./ListPagination";
-import React from "react";
+import React, { useEffect } from "react";
 
 const ItemList = (props) => {
-  if (!props.items) {
-    return <div className="py-4">Loading...</div>;
-  }
+  useEffect(() => {
+    console.log(props);
+  })
 
-  if (props.items.length === 0) {
-    return <div className="py-4 no-items">No items are here... yet.</div>;
-  }
+  if (props.itemsCount && props.loading) {
+    return <div className="py-4">Loading...</div>;
+  } else if (!props.itemsCount) {    
+      return <div id="empty" className="py-4 no-items">No items are here... yet.</div>;
+    }
 
   return (
     <div className="container py-2">
