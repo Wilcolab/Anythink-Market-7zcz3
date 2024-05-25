@@ -58,11 +58,13 @@ const TagFilterTab = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
   ...state.itemList,
   tags: state.home.tags,
   token: state.common.token,
-});
+}};
 
 const mapDispatchToProps = (dispatch) => ({
   onTabClick: (tab, pager, payload) =>
@@ -87,6 +89,7 @@ const MainView = (props) => {
       </div>
 
       <ItemList
+        title={props.title}
         pager={props.pager}
         items={props.items}
         loading={props.loading}

@@ -39,6 +39,8 @@ class Home extends React.Component {
       itemsPromise,
       Promise.all([agent.Tags.getAll(), itemsPromise()])
     );
+
+    console.log(this.props);
   }
 
   componentWillUnmount() {
