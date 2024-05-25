@@ -115,6 +115,10 @@ class Profile extends React.Component {
     );
   }
 
+  componentDidUpdate() {
+    console.log()
+  }
+
   render() {
     const profile = this.props.profile;
     if (!profile) {
@@ -153,7 +157,6 @@ class Profile extends React.Component {
           <div className="row py-4">
             <div className="col-xs-12 col-md-10 offset-md-1">
               <div className="items-toggle">{this.renderTabs()}</div>
-
               <ItemList
                 pager={this.props.pager}
                 items={this.props.items}
